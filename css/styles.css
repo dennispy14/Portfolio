@@ -26,7 +26,7 @@ body {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
-    overflow: hidden;    
+    overflow: hidden;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     position: relative;
