@@ -90,5 +90,5 @@ function onTouchMove(event) {
 }
 
 // Adicionar os listeners para os eventos de toque
-window.addEventListener('touchstart', onTouchStart, { passive: true });
-window.addEventListener('touchmove', onTouchMove, { passive: true });
+window.addEventListener('touchstart', onTouchStart, {});
+window.addEventListener('touchmove', onTouchMove, {});
