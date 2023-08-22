@@ -26,8 +26,7 @@ body {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
-    overflow: hidden;
-    opacity: 0;
+    overflow: hidden;    
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     position: relative;
@@ -120,9 +119,9 @@ body {
 }
 
 #img {
-    border: 0px solid rgb(57, 78, 199);
+    border: 0px solid black;
     border-radius: 5px;
-    box-shadow: 5px 5px 8px rgb(106, 125, 231);
+    box-shadow: 5px 5px 8px black;
     max-width: 100%;
     height: auto;
     margin: 0 auto;

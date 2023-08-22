@@ -66,6 +66,7 @@ hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
+
 /*Evento para rolagem pelo celular*/
 let startY = 0;
 
@@ -80,15 +81,16 @@ function onTouchMove(event) {
     const deltaY = startY - currentY;
 
     // Verificar se o movimento foi para cima ou para baixo
-    if (deltaY > 50) {
+    if (deltaY > 30) {
         // Rolar para baixo
-        window.scrollBy(0, 750);
-    } else if (deltaY < -50) {
+        window.scrollBy(0, 500);
+    } else if (deltaY < -30) {
         // Rolar para cima
-        window.scrollBy(0, -750);
+        window.scrollBy(0, -500);
     }
 }
 
 // Adicionar os listeners para os eventos de toque
 window.addEventListener('touchstart', onTouchStart, {});
 window.addEventListener('touchmove', onTouchMove, {});
+
