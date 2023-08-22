@@ -12,302 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Ubuntu:wght@300&display=swap"
         rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-
-        }
-
-        body {
-            font-family: 'Caprasimo', cursive;
-            font-family: 'Ubuntu', sans-serif;
-            margin: 0;
-            /* Certifique-se de remover margens do corpo para ocupar a tela inteira */
-            overflow: hidden;
-            background-color: #0A192F;
-
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            /* Usando min-height em vez de height */
-            width: 100%;
-            padding: 40px;
-            text-align: center;
-            scroll-snap-align: start;
-            overflow: hidden;
-
-
-        }
-
-        .section {
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            scroll-snap-align: start;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            position: relative;
-
-
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            /* Usando min-height em vez de height */
-            width: 100%;
-            padding: 40px;
-            text-align: center;
-            scroll-snap-align: start;
-            overflow: hidden;
-
-
-        }
-
-        .content:nth-child(odd) {
-            background-color: #e0e0e0;
-
-        }
-
-        .content:nth-child(even) {
-            background-color: #e0e0e0;
-        }
-
-        .portfolio {
-            width: 100%;
-            height: 500vh;
-            /* Definindo altura para ocupar toda a tela */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #0A192F;
-        }
-
-        .header {
-            width: 100%;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            text-align: center;
-        }
-
-        .nav {
-            position: fixed;
-            /* Fixa o menu de navegação */
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            background-color: #444;
-            padding: 10px 0;
-            z-index: 1000;
-
-            /* Certifique-se de que o menu esteja acima de outros elementos */
-        }
-
-        .nav a {
-            color: white;
-            text-decoration: none;
-        }
-
-        /* Estilo adicional para a seção ativa no menu */
-        .nav a.active {
-            color: white;
-            font-weight: bold;
-        }
-
-        .projects {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-
-        }
-
-        .project {
-            width: 300px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            background-color: white;
-            text-align: left;
-
-        }
-
-        .skills {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 20px 0;
-        }
-
-        .skill {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #444;
-            color: white;
-            border-radius: 50%;
-            font-size: 24px;
-            margin-right: 10px;
-        }
-
-        .fa-brands {
-            font-size: 45px;
-
-        }
-
-        #links {
-            margin-top: 7px;
-        }
-
-        .link {
-            display: inline-block;
-            padding: 10px 10px;
-            border: 2px solid #007bff;
-            /* Cor da borda */
-            text-decoration: none;
-            color: #007bff;
-            /* Cor do texto */
-            font-weight: bold;
-            border-radius: 4px;
-            /* Borda arredondada */
-        }
-
-        #divInicio {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 400px;
-            padding: 20px;
-
-
-        }
-
-
-
-        .footer {
-            background-color: #000;
-            color: #FFFFFF;
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-
-        .falling-text {
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: fallAndHold 1s ease forwards;
-
-        }
-
-        .about-text {
-            flex: 1;
-            padding-right: 20px;
-            text-align: left;
-        }
-
-        @keyframes fallAndHold {
-            0% {
-                top: -100px;
-                opacity: 0;
-            }
-
-
-
-            100% {
-                top: 30%;
-                opacity: 1;
-            }
-        }
-
-        @keyframes slide-in {
-            0% {
-                opacity: 0;
-                transform: translateY(-300%);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        .card {
-            width: 200px;
-            height: 250px;
-            background-color: #fff;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            margin: 10px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .card-content {
-            display: none;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        .card.open {
-            transform: rotateY(180deg);
-        }
-
-        .card.open .card-content {
-            display: block;
-        }
-    </style>
-
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
 </head>
 
 <body>
@@ -315,7 +21,6 @@
         <div class="nav">
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre Mim</a>
-            <a href="#experiencia">Experiência</a>
             <a href="#projetos">Projetos</a>
             <a href="#habilidades">Habilidades</a>
         </div>
@@ -324,9 +29,9 @@
                 style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
                 <div class="falling-text">
-                    <div id="divInicio" style="display: flex; align-items: center;">
+                    <div id="divInicio">
                         <div id="txt" style="flex: 1;">
-                            <h2>Bem-vindo ao meu Portfólio</h2>
+                            <h2><span class="typewriter-text">Bem-vindo ao meu Portfólio</span></h2>
                             <p>Olá! Meu nome é Dennis e sou um Programador FullStack.</p>
                             <div id="links">
                                 <a class="link" href="https://www.linkedin.com/in/dennis-py-a497b5b4/" target="_blank"
@@ -337,8 +42,8 @@
                                     GitHub</a>
                             </div>
                         </div>
-                        <div id="img" style="flex: 1;">
-                            <img src="sua_foto.jpg" alt="Minha Foto"
+                        <div style="flex: 1;">
+                            <img id="img" src="imagens/sua_foto.jpg" alt="Minha Foto"
                                 style="width: 200px; height: 200px; border-radius: 50%;">
                         </div>
                     </div>
@@ -346,77 +51,30 @@
             </div>
         </div>
         <div class="section">
-            <div class="content" id="sobre">
-                <div class="falling-text">
+            <div id="sobre" class="content">
+
+                <div class="about-text">
                     <h2>Sobre Mim</h2>
-                    <div class="about-text">
-
-                        <p>Olá! Sou um programador FullStack com paixão por criar soluções inovadoras. Estou
-                            constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.</p>
+                    <div class="intro">
+                        <p>Olá! Sou um Desenvolvedor FullStack. Minha paixão pela tecnologia me levou a
+                            aprofundar meus conhecimentos em linguagens como Java e JavaScript, capacitando-me para
+                            criar aplicações
+                            web eficientes e amigáveis aos usuários.</p>
+                    </div>
+                    <div class="about">
+                        <p>Sou apaixonado por explorar novas tecnologias e tendências no campo do desenvolvimento
+                            de software. Além do meu trabalho, gosto de tocar violão, jogar e aprofundar meus
+                            conhecimentos em diversas
+                            áreas.</p>
+                    </div>
+                    <div class="contact">
+                        <p>Se você procura um desenvolvedor com foco em resultados e com um desejo constante de
+                            aprendizado, estou
+                            pronto para contribuir e crescer profissionalmente.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="content" id="experiencia">
-                <div class="falling-text">
-                    <h2>Experiência</h2>
-                    <div class="about-text">
 
-                        <p>Olá! Sou um programador FullStack com paixão por criar soluções inovadoras. Estou
-                            constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.Olá! Sou
-                            um
-                            programador FullStack com paixão por criar soluções inovadoras. Estou constantemente
-                            aprendendo e evoluindo minhas habilidades para entregar o melhor trabalho possível.</p>
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="section">
@@ -427,19 +85,19 @@
                     <h2>Meus Projetos</h2>
                     <div class="card-container">
                         <div class="card" onclick="toggleCardContent(this)">
-                            <img src="projeto1.jpg" alt="Card Image">
+                            <img src="imagens/projeto1.png" alt="Card Image">
                             <div class="card-content">
                                 <p>Um texto sobre o primeiro card.</p>
                             </div>
                         </div>
                         <div class="card" onclick="toggleCardContent(this)">
-                            <img src="projeto1.jpg" alt="Card Image">
+                            <img src="imagens/projeto2.jpg" alt="Card Image">
                             <div class="card-content">
                                 <p>Um texto sobre o segundo card.</p>
                             </div>
                         </div>
                         <div class="card" onclick="toggleCardContent(this)">
-                            <img src="projeto1.jpg" alt="Card Image">
+                            <img src="imagens/projeto2.jpg" alt="Card Image">
                             <div class="card-content">
                                 <p>Um texto sobre o terceiro card.</p>
                             </div>
@@ -470,51 +128,6 @@
     <footer class="footer">
         <p>© 2023 Meu Portfólio de Desenvolvimento | Todos os direitos reservados</p>
     </footer>
-    <script>
-        const sections = document.querySelectorAll('.section');
-        let currentSectionIndex = 0;
-
-        function scrollToSection(sectionIndex) {
-            if (sectionIndex >= 0 && sectionIndex < sections.length) {
-                sections[sectionIndex].scrollIntoView({ behavior: 'smooth' });
-                currentSectionIndex = sectionIndex;
-                animateFallingText(sections[sectionIndex]);
-            }
-        }
-
-        function toggleCardContent(card) {
-            card.classList.toggle('open');
-        }
-
-        window.addEventListener('wheel', (e) => {
-            if (e.deltaY > 0) {
-                scrollToSection(currentSectionIndex + 1);
-            } else {
-                scrollToSection(currentSectionIndex - 1);
-            }
-        });
-
-        function animateSections() {
-            sections.forEach((section) => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (sectionTop < windowHeight * 0.75) {
-                    section.style.opacity = 1;
-                    section.style.transform = 'translateY(0)';
-                }
-            });
-        }
-
-        function animateFallingText(section) {
-            const fallingText = section.querySelector('.falling-text');
-            fallingText.style.animation = 'none';
-            void fallingText.offsetWidth; // Trigger reflow to restart animation
-            fallingText.style.animation = null;
-        }
-
-        window.addEventListener('scroll', animateSections);
-    </script>
 
 </body>
 

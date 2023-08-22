@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: 'Caprasimo', cursive;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    /* Certifique-se de remover margens do corpo para ocupar a tela inteira */
+    overflow: hidden;
+    background-color: #0A192F;
+
+}
+
+.section {
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: #333;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: relative;
+
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Usando min-height em vez de height */
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    scroll-snap-align: start;
+    overflow: hidden;
+}
+
+.content:nth-child(odd) {
+    background-color: #e0e0e0;
+
+}
+
+.content:nth-child(even) {
+    background-color: #e0e0e0;
+}
+
+#img {
+    border: 0px solid rgb(57, 78, 199);
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px rgb(106, 125, 231);
+}
+
+
+
+.header {
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.nav {
+    position: fixed;
+    /* Fixa o menu de navegação */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #444;
+    padding: 10px 0;
+    z-index: 1000;
+
+    /* Certifique-se de que o menu esteja acima de outros elementos */
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo adicional para a seção ativa no menu */
+.nav a.active {
+    color: white;
+    font-weight: bold;
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.project {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+
+}
+
+.skills {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.skill {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #444;
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.fa-brands {
+    font-size: 45px;
+
+}
+
+#links {
+    margin-top: 7px;
+}
+
+.link {
+    display: inline-block;
+    padding: 10px 10px;
+    border: 2px solid rgb(57, 78, 199);
+    text-decoration: none;
+    color: rgb(57, 78, 199);
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.link:hover {
+    transform: scale(1.1);
+}
+
+#divInicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+.footer {
+    background-color: #000;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.falling-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fallAndHold 1s ease forwards;
+}
+
+.about-text {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+@keyframes fallAndHold {
+    0% {
+        top: -100px;
+        opacity: 0;
+    }
+
+
+
+    100% {
+        top: 30%;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-300%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    width: 330px;
+    height: 330px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #444;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    max-width: 150%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.card-content {
+    display: none;
+    background-color: #fff;
+}
+
+.card.open {
+    transform: rotateY(180deg);
+}
+
+.card.open .card-content {
+    display: block;
+    max-width: 150%;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 20%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.intro,
+.about,
+.contact {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+
+}
+
+.typewriter-text {
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 0em;
+    border-right: .15em solid #333;
+    /* Efeito de cursor de digitação */
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* Animação da digitação */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #333;
+    }
+}
