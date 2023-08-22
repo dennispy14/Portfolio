@@ -6,6 +6,7 @@ function scrollToSection(sectionIndex) {
         sections[sectionIndex].scrollIntoView({ behavior: 'smooth' });
         currentSectionIndex = sectionIndex;
         animateFallingText(sections[sectionIndex]);
+
     }
 }
 
@@ -65,3 +66,29 @@ hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
+/*Evento para rolagem pelo celular*/
+let startY = 0;
+
+// Função para detectar o início do toque
+function onTouchStart(event) {
+    startY = event.touches[0].clientY;
+}
+
+// Função para detectar o movimento do toque
+function onTouchMove(event) {
+    const currentY = event.touches[0].clientY;
+    const deltaY = startY - currentY;
+
+    // Verificar se o movimento foi para cima ou para baixo
+    if (deltaY > 50) {
+        // Rolar para baixo
+        window.scrollBy(0, 750);
+    } else if (deltaY < -50) {
+        // Rolar para cima
+        window.scrollBy(0, -750);
+    }
+}
+
+// Adicionar os listeners para os eventos de toque
+window.addEventListener('touchstart', onTouchStart, { passive: true });
+window.addEventListener('touchmove', onTouchMove, { passive: true });
