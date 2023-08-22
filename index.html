@@ -17,114 +17,127 @@
 </head>
 
 <body>
-    <div class="fullpage">
-        <div class="nav">
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre Mim</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#habilidades">Habilidades</a>
-        </div>
-        <div class="section">
-            <div class="content" id="inicio"
-                style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <nav class="navbar">
 
-                <div class="falling-text">
-                    <div id="divInicio">
-                        <div id="txt" style="flex: 1;">
-                            <h2><span class="typewriter-text">Bem-vindo ao meu Portfólio</span></h2>
-                            <p>Olá! Meu nome é Dennis e sou um Programador FullStack.</p>
-                            <div id="links">
-                                <a class="link" href="https://www.linkedin.com/in/dennis-py-a497b5b4/" target="_blank"
-                                    style="margin-right: 20px;"><i class="fa-brands fa-linkedin"
-                                        style="font-size: 15px;"></i> LinkedIn</a>
-                                <a class="link" href="https://github.com/dennispy14" target="_blank"><i
-                                        class="fa-brands fa-github" style="font-size: 15px;"></i>
-                                    GitHub</a>
-                            </div>
-                        </div>
-                        <div style="flex: 1;">
-                            <img id="img" src="imagens/sua_foto.jpg" alt="Minha Foto"
-                                style="width: 200px; height: 200px; border-radius: 50%;">
-                        </div>
-                    </div>
-                </div>
+        <div class="logo">
+            <h1>Dennis Py</h1>
+            <div class="contact-icons">
+                <a href="mailto:dennispy14@hotmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/51985501811"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
-        <div class="section">
-            <div id="sobre" class="content">
 
-                <div class="about-text">
-                    <h2>Sobre Mim</h2>
-                    <div class="intro">
-                        <p>Olá! Sou um Desenvolvedor FullStack. Minha paixão pela tecnologia me levou a
-                            aprofundar meus conhecimentos em linguagens como Java e JavaScript, capacitando-me para
-                            criar aplicações
-                            web eficientes e amigáveis aos usuários.</p>
-                    </div>
-                    <div class="about">
-                        <p>Sou apaixonado por explorar novas tecnologias e tendências no campo do desenvolvimento
-                            de software. Além do meu trabalho, gosto de tocar violão, jogar e aprofundar meus
-                            conhecimentos em diversas
-                            áreas.</p>
-                    </div>
-                    <div class="contact">
-                        <p>Se você procura um desenvolvedor com foco em resultados e com um desejo constante de
-                            aprendizado, estou
-                            pronto para contribuir e crescer profissionalmente.</p>
-                    </div>
-                </div>
-
-
-            </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
-        <div class="section">
-            <div class="content" id="projetos"
-                style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-
-                <div class="falling-text">
-                    <h2>Meus Projetos</h2>
-                    <div class="card-container">
-                        <div class="card" onclick="toggleCardContent(this)">
-                            <img src="imagens/projeto1.png" alt="Card Image">
-                            <div class="card-content">
-                                <p>Um texto sobre o primeiro card.</p>
-                            </div>
-                        </div>
-                        <div class="card" onclick="toggleCardContent(this)">
-                            <img src="imagens/projeto2.jpg" alt="Card Image">
-                            <div class="card-content">
-                                <p>Um texto sobre o segundo card.</p>
-                            </div>
-                        </div>
-                        <div class="card" onclick="toggleCardContent(this)">
-                            <img src="imagens/projeto2.jpg" alt="Card Image">
-                            <div class="card-content">
-                                <p>Um texto sobre o terceiro card.</p>
-                            </div>
+    </nav>
+    <div class="section">
+        <div class="content" id="inicio">
+            <div class="falling-text">
+                <div id="divInicio">
+                    <div id="txt" style="flex: 1;">
+                        <h2><span class="typewriter-text">Bem-vindo ao meu Portfólio</span></h2>
+                        <p>Olá! Meu nome é Dennis e sou um Programador FullStack.</p>
+                        <div id="links">
+                            <a class="link" href="https://www.linkedin.com/in/dennis-py-a497b5b4/" target="_blank"
+                                style="margin-right: 20px;"><i class="fa-brands fa-linkedin"
+                                    style="font-size: 15px;"></i> LinkedIn</a>
+                            <a class="link" href="https://github.com/dennispy14" target="_blank"><i
+                                    class="fa-brands fa-github" style="font-size: 15px;"></i>
+                                GitHub</a>
                         </div>
                     </div>
-                </div>
-
-
-            </div>
-        </div>
-        <div class="section">
-            <div class="content" id="habilidades">
-                <div class="falling-text">
-                    <h2>Habilidades</h2>
-                    <div class="skills">
-                        <div class="skill"><i class="fa-brands fa-html5"></i></div>
-                        <div class="skill"><i class="fa-brands fa-css3-alt"></i></div>
-                        <div class="skill"><i class="fa-brands fa-js"></i></div>
-                        <div class="skill"><i class="fa-brands fa-react"></i></div>
-                        <div class="skill"><i class="fa-brands fa-java"></i></div>
-                        <div class="skill"><i class="fa-solid fa-layer-group"></i></div>
-                        <!-- Adicione mais habilidades aqui -->
+                    <div style="flex: 1;">
+                        <img id="img" src="imagens/sua_foto.jpg" alt="Minha Foto"
+                            style="width: 200px; height: 200px; border-radius: 50%;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="section">
+        <div id="sobre" class="content">
+
+            <div class="about-text">
+                <h2>Sobre Mim</h2>
+                <div class="intro">
+                    <p>Olá! Sou um Desenvolvedor FullStack. Minha paixão pela tecnologia me levou a
+                        aprofundar meus conhecimentos em linguagens como Java e JavaScript, capacitando-me para
+                        criar aplicações
+                        web eficientes e amigáveis aos usuários.</p>
+                </div>
+                <div class="about">
+                    <p>Sou apaixonado por explorar novas tecnologias e tendências no campo do desenvolvimento
+                        de software. Além do meu trabalho, gosto de tocar violão, jogar e aprofundar meus
+                        conhecimentos em diversas
+                        áreas.</p>
+                </div>
+                <div class="contact">
+                    <p>Se você procura um desenvolvedor com foco em resultados e com um desejo constante de
+                        aprendizado, estou
+                        pronto para contribuir e crescer profissionalmente.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="content" id="projetos"
+            style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+            <div class="falling-text">
+                <h2>Meus Projetos</h2>
+                <div class="card-container">
+                    <div class="card" onclick="toggleCardContent(this)">
+                        <img src="imagens/projeto1.png" alt="Card Image">
+                        <div class="card-content">
+                            <p>Um texto sobre o primeiro card.</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="toggleCardContent(this)">
+                        <img src="imagens/projeto2.jpg" alt="Card Image">
+                        <div class="card-content">
+                            <p>Um texto sobre o segundo card.</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="toggleCardContent(this)">
+                        <img src="imagens/projeto2.jpg" alt="Card Image">
+                        <div class="card-content">
+                            <p>Um texto sobre o terceiro card.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="content" id="habilidades">
+            <div class="falling-text">
+                <h2>Habilidades</h2>
+                <div class="skills">
+                    <div class="skill"><i class="fa-brands fa-html5"></i></div>
+                    <div class="skill"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="skill"><i class="fa-brands fa-js"></i></div>
+                    <div class="skill"><i class="fa-brands fa-react"></i></div>
+                    <div class="skill"><i class="fa-brands fa-java"></i></div>
+                    <div class="skill"><i class="fa-solid fa-layer-group"></i></div>
+                    <!-- Adicione mais habilidades aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <p>© 2023 Meu Portfólio de Desenvolvimento | Todos os direitos reservados</p>
     </footer>

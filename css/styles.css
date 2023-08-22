@@ -47,6 +47,8 @@ body {
     text-align: center;
     scroll-snap-align: start;
     overflow: hidden;
+
+
 }
 
 .content:nth-child(odd) {
@@ -58,62 +60,37 @@ body {
     background-color: #e0e0e0;
 }
 
-#img {
-    border: 0px solid rgb(57, 78, 199);
-    border-radius: 5px;
-    box-shadow: 5px 5px 8px rgb(106, 125, 231);
-}
-
-
-
-.header {
-    width: 100%;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    text-align: center;
-}
-
-.nav {
+.navbar {
     position: fixed;
-    /* Fixa o menu de navegação */
     top: 0;
     left: 0;
     width: 100%;
+    background-color: #333;
     display: flex;
-    justify-content: space-around;
-    background-color: #444;
-    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     z-index: 1000;
-
-    /* Certifique-se de que o menu esteja acima de outros elementos */
 }
 
-.nav a {
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s;
+    display: block;
 }
 
-/* Estilo adicional para a seção ativa no menu */
-.nav a.active {
-    color: white;
-    font-weight: bold;
-}
-
-.projects {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-
-}
-
-.project {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
-
+.nav-links a:hover {
+    color: rgb(57, 78, 199);
 }
 
 .skills {
@@ -142,6 +119,15 @@ body {
 
 }
 
+#img {
+    border: 0px solid rgb(57, 78, 199);
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px rgb(106, 125, 231);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
 #links {
     margin-top: 7px;
 }
@@ -160,11 +146,11 @@ body {
 
 .link:hover {
     transform: scale(1.1);
+
 }
 
 #divInicio {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 400px;
     padding: 20px;
@@ -325,4 +311,62 @@ body {
     50% {
         border-color: #333;
     }
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+.logo h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.contact-icons {
+    display: flex;
+    align-items: center;
+}
+
+.contact-icons a {
+    color: white;
+    font-size: 1.2rem;
+    flex: 0.3;
+    text-decoration: none;
 }
