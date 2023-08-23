@@ -1,27 +1,51 @@
 const sections = document.querySelectorAll('.section');
 let currentSectionIndex = 0;
+let currentSection = 0;
+let scrolling = false;// Flag para controlar se a rolagem está acontecendo 
 
-function scrollToSection(sectionIndex) {
-    if (sectionIndex >= 0 && sectionIndex < sections.length) {
-        sections[sectionIndex].scrollIntoView({ behavior: 'smooth' });
-        currentSectionIndex = sectionIndex;
-        animateFallingText(sections[sectionIndex]);
-
+/*Navegação por section do site*/
+function scrollToSection(index) {
+    if (!scrolling && index >= 0 && index < sections.length) {
+        scrolling = true;
+        currentSection = index;
+        window.scrollTo({
+            top: sections[index].offsetTop,
+            behavior: 'smooth'
+        });
+        setTimeout(() => {
+            scrolling = false;
+        }, 1000);
     }
 }
 
-function toggleCardContent(card) {
-    card.classList.toggle('open');
-}
-
-window.addEventListener('wheel', (e) => {
-    if (e.deltaY > 0) {
-        scrollToSection(currentSectionIndex + 1);
+document.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    if (event.deltaY > 0) {
+        scrollToSection(currentSection + 1);
     } else {
-        scrollToSection(currentSectionIndex - 1);
+        scrollToSection(currentSection - 1);
     }
 });
 
+let touchStartY = 0;
+let touchEndY = 0;
+
+document.addEventListener('touchstart', (event) => {
+    touchStartY = event.touches[0].clientY;
+});
+
+document.addEventListener('touchmove', (event) => {
+    touchEndY = event.touches[0].clientY;
+    const deltaY = touchEndY - touchStartY;
+
+    if (deltaY > 50) {
+        scrollToSection(currentSection - 1);
+    } else if (deltaY < -50) {
+        scrollToSection(currentSection + 1);
+    }
+});
+
+/*Animação de texto caindo*/
 function animateSections() {
     sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top;
@@ -37,12 +61,24 @@ function animateSections() {
 function animateFallingText(section) {
     const fallingText = section.querySelector('.falling-text');
     fallingText.style.animation = 'none';
-    void fallingText.offsetWidth; // Trigger reflow to restart animation
+    void fallingText.offsetWidth;
     fallingText.style.animation = null;
 }
 
 window.addEventListener('scroll', animateSections);
 
+
+
+/*Menu responsivo hamburger*/
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+
+/*Cria o Efeito de Digitação */
 const typewriterText = document.querySelector('.typewriter-text');
 const text = typewriterText.textContent;
 typewriterText.textContent = ''; // Limpar o texto inicial
@@ -59,38 +95,13 @@ function type() {
 
 type(); // Iniciar a digitação
 
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 });
-
-
-/*Evento para rolagem pelo celular*/
-let startY = 0;
-
-// Função para detectar o início do toque
-function onTouchStart(event) {
-    startY = event.touches[0].clientY;
-}
-
-// Função para detectar o movimento do toque
-function onTouchMove(event) {
-    const currentY = event.touches[0].clientY;
-    const deltaY = startY - currentY;
-
-    // Verificar se o movimento foi para cima ou para baixo
-    if (deltaY > 30) {
-        // Rolar para baixo
-        window.scrollBy(0, 500);
-    } else if (deltaY < -30) {
-        // Rolar para cima
-        window.scrollBy(0, -500);
-    }
-}
-
-// Adicionar os listeners para os eventos de toque
-window.addEventListener('touchstart', onTouchStart, {});
-window.addEventListener('touchmove', onTouchMove, {});
-

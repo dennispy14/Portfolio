@@ -12,13 +12,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Ubuntu:wght@300&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
 </head>
 
 <body>
     <nav class="navbar">
-
         <div class="logo">
             <h1>Dennis Py</h1>
             <div class="contact-icons">
@@ -26,7 +27,6 @@
                 <a href="https://wa.me/5551985501811" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
-
         <ul class="nav-links">
             <li><a href="#inicio">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
@@ -66,60 +66,73 @@
     </div>
     <div class="section">
         <div id="sobre" class="content">
-            <a href="#sobre" style="text-decoration: none; color:black;">
-                <div class="about-text">
-                    <h2>Sobre Mim</h2>
-                    <div class="intro">
-                        <p>Olá! Sou um Desenvolvedor FullStack. Minha paixão pela tecnologia me levou a
-                            aprofundar meus conhecimentos em linguagens como Java e JavaScript, capacitando-me para
-                            criar aplicações
-                            web eficientes e amigáveis aos usuários.</p>
-                    </div>
-                    <div class="about">
-                        <p>Sou apaixonado por explorar novas tecnologias e tendências no campo do desenvolvimento
-                            de software. Além do meu trabalho, gosto de tocar violão, jogar e aprofundar meus
-                            conhecimentos em diversas
-                            áreas.</p>
-                    </div>
-                    <div class="contact">
-                        <p>Se você procura um desenvolvedor com foco em resultados e com um desejo constante de
-                            aprendizado, estou
-                            pronto para contribuir e crescer profissionalmente.</p>
-                    </div>
+            <div class="about-text">
+                <h2>Sobre Mim</h2>
+                <div class="intro">
+                    <p>Olá! Sou um Desenvolvedor FullStack. Minha paixão pela tecnologia me levou a
+                        aprofundar meus conhecimentos em linguagens como Java e JavaScript, capacitando-me para
+                        criar aplicações web eficientes e amigáveis aos usuários.</p>
                 </div>
-            </a>
-
+                <div class="about">
+                    <p>Sou apaixonado por explorar novas tecnologias e tendências no campo do desenvolvimento
+                        de software. Além do meu trabalho, gosto de tocar violão, jogar e aprofundar meus
+                        conhecimentos em diversas áreas.</p>
+                </div>
+                <div class="contact">
+                    <p>Se você procura um desenvolvedor com foco em resultados e com um desejo constante de
+                        aprendizado, estou pronto para contribuir e crescer profissionalmente.</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="section">
         <div class="content" id="projetos"
             style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-
             <div class="falling-text">
                 <h2>Meus Projetos</h2>
-                <div class="card-container">
-                    <div class="card" onclick="toggleCardContent(this)">
-                        <img src="imagens/projeto1.png" alt="Card Image">
-                        <div class="card-content">
-                            <p>Um texto sobre o primeiro card.</p>
+                <div class="carousel-container">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img src="imagens/projeto1.png" alt="Card Image">
+                                    <a href="https://dennispy14.github.io/ClimaPorCidade/" target="_blank">
+                                        <p>Weather Finder</p>
+                                    </a>
+                                    <div class="card-content">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img src="imagens/projeto2.jpg" alt="Card Image">
+                                    <a href="" target="_blank">
+                                        <p>Em Breve</p>
+                                    </a>
+                                    <div class="card-content">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img src="imagens/projeto3.jpg" alt="Card Image">
+                                    <a href="" target="_blank">
+                                        <p>Em Breve</p>
+                                    </a>
+                                    <div class="card-content">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    <div class="card" onclick="toggleCardContent(this)">
-                        <img src="imagens/projeto2.jpg" alt="Card Image">
-                        <div class="card-content">
-                            <p>Um texto sobre o segundo card.</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="toggleCardContent(this)">
-                        <img src="imagens/projeto2.jpg" alt="Card Image">
-                        <div class="card-content">
-                            <p>Um texto sobre o terceiro card.</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
-
-
         </div>
     </div>
     <div class="section">
@@ -133,7 +146,6 @@
                     <div class="skill"><i class="fa-brands fa-react"></i></div>
                     <div class="skill"><i class="fa-brands fa-java"></i></div>
                     <div class="skill"><i class="fa-solid fa-layer-group"></i></div>
-                    <!-- Adicione mais habilidades aqui -->
                 </div>
             </div>
         </div>
@@ -142,6 +154,7 @@
     <footer class="footer">
         <p>© 2023 Meu Portfólio de Desenvolvimento | Todos os direitos reservados</p>
     </footer>
+
 </body>
 
 </html>
