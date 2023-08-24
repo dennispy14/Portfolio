@@ -8,7 +8,6 @@
 
 body {
     font-family: 'Ubuntu', sans-serif;
-    margin: 0;
     overflow: hidden;
     background-color: #0A192F;
 }
@@ -16,8 +15,6 @@ body {
 .section {
     max-width: 1500px;
     margin: 0 auto;
-    background-color: #333;
-    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -322,33 +319,34 @@ body {
 
 .carousel-container {
     max-width: 100%;
+    padding: 20px;
     overflow: hidden;
-    flex-wrap: nowrap;
+    width: 1000px;
 }
 
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 1000px;
 }
 
 .card {
-    width: 300px;
+    /*
+    max-width: 100%;
     text-align: center;
-    width: calc(50% - 20px);
     border: 1px solid #ccc;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    border-radius: 5px;
-
-}
-
-.carousel-container img {
+    border-radius: 5px;*/
     max-width: 100%;
-    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+
+    text-align: center;
 
 }
-
 
 .card a {
     display: inline-block;
@@ -358,6 +356,8 @@ body {
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
+
+
 
 }
 
