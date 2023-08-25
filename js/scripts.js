@@ -98,7 +98,7 @@ type(); // Iniciar a digitação
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 'auto',
     centeredSlides: true,
-    spaceBetween: 0,
+    spaceBetween: 1,
     loop: false,
     navigation: {
         nextEl: '.swiper-button-next',
