@@ -191,7 +191,14 @@ body {
     border-right: .15em solid #333;
     /* Efeito de cursor de digitação */
     animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+    color: white;
 
+}
+
+p,
+h1,
+h2 {
+    color: white;
 }
 
 /* Animação da digitação */
