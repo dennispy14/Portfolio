@@ -47,7 +47,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     animation: fallAndHold 1s ease forwards;
-    margin-top: -60px;
+
+
 
 }
 
@@ -61,7 +62,7 @@ body {
 
 
     100% {
-        top: 30%;
+        top: 18%;
         opacity: 1;
     }
 }
@@ -123,6 +124,7 @@ body {
     border-radius: 50%;
     font-size: 24px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .fa-brands {
@@ -150,7 +152,17 @@ body {
     width: 100%;
 }
 
+#iniContent {
+    margin-top: 130px;
+}
 
+#projContent {
+    margin-top: 10%;
+}
+
+#habContent {
+    margin-top: 130px;
+}
 
 @keyframes slide-in {
     0% {
@@ -179,10 +191,12 @@ body {
 .contact {
     max-width: 800px;
     min-width: 250px;
-    margin: 1rem auto;
-
-
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 5px;
 }
+
+
 
 .typewriter-text {
     overflow: hidden;
@@ -331,4 +345,43 @@ h2 {
     height: 300px;
     object-fit: cover;
 
+}
+
+
+
+.mini-janela {
+    max-height: 0;
+    overflow: hidden;
+    width: 0;
+    background-color: #444;
+    border: 0px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px black;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.mini-janela p {
+    max-width: 800px;
+    min-width: 250px;
+    margin: 1rem auto;
+    font-size: 16px;
+    line-height: 1.5;
+
+}
+
+.aberto {
+    max-height: 500px;
+    width: 300px;
+    opacity: 1;
+}
+
+.transition {
+    transition: all 0.3s ease;
 }

@@ -46,16 +46,11 @@
     <div class="section" id="inicio">
         <div class="fullscreen-div"></div>
         <div class="content">
-            <div class="falling-text">
-                <div>
-                    <img id="img" src="imagens/sua_foto.jpg" alt="Minha Foto"
-                        style="width: 200px; height: 200px; border-radius: 50%;">
-                </div>
-                <div id="txt">
-                    <h2><span class="typewriter-text">Bem-vindo ao meu Portfólio</span></h2>
-                    <p>Olá! Meu nome é Dennis e sou um Programador FullStack.</p>
-                </div>
-
+            <div class="falling-text" id="iniContent">
+                <img id="img" src="imagens/sua_foto.jpg" alt="Minha Foto"
+                    style="width: 200px; height: 200px; border-radius: 50%;">
+                <h2><span class="typewriter-text">Bem-vindo ao meu Portfólio</span></h2>
+                <p>Olá! Meu nome é Dennis e sou um Programador FullStack.</p>
             </div>
         </div>
     </div>
@@ -70,8 +65,8 @@
                         criar aplicações web eficientes e amigáveis aos usuários.</p>
                 </div>
                 <div class="about">
-                    <p>Sou apaixonado por explorar novas tecnologias e tendências no campo do desenvolvimento
-                        de software. Além do meu trabalho, gosto de tocar violão, jogar e aprofundar meus
+                    <p>Curto explorar novas tecnologias e tendências no campo do desenvolvimento
+                        de software. Além do meu trabalho, gosto de ler, tocar violão, jogar e aprofundar meus
                         conhecimentos em diversas áreas.</p>
                 </div>
                 <div class="contact">
@@ -84,7 +79,7 @@
     <div class="section" id="projetos">
         <div class="fullscreen-div"></div>
         <div class="content">
-            <div class="falling-text">
+            <div class="falling-text" id="projContent">
                 <h2>Meus Projetos</h2>
                 <div class="carousel-container">
                     <div class="swiper-container">
@@ -124,20 +119,23 @@
     <div class="section" id="habilidades">
         <div class="fullscreen-div"></div>
         <div class="content">
-            <div class="falling-text">
+            <div class="falling-text" id="habContent">
                 <h2>Habilidades</h2>
                 <div class="skills">
-                    <div class="skill"><i class="fa-brands fa-html5"></i></div>
-                    <div class="skill"><i class="fa-brands fa-css3-alt"></i></div>
-                    <div class="skill"><i class="fa-brands fa-js"></i></div>
-                    <div class="skill"><i class="fa-brands fa-react"></i></div>
-                    <div class="skill"><i class="fa-brands fa-java"></i></div>
-                    <div class="skill"><i class="fa-solid fa-layer-group"></i></div>
+                    <div class="skill"><i class="fa-brands fa-java" onclick="abrirMiniJanela(1)"></i></div>
+                    <div class="skill"><i class="fa-brands fa-js" onclick="abrirMiniJanela(2)"></i></div>
+                    <div class="skill"><i class="fa-brands fa-html5" onclick="abrirMiniJanela(3)"></i> </div>
+                    <div class="skill"><i class="fa-brands fa-css3-alt" onclick="abrirMiniJanela(4)"></i></div>
+                </div>
+                <div class="mini-janela" id="mini-janela" style="display: none;">
+                    <h2 id="tituloSkill"></h2>
+                    <p id="txtSkill"></p>
+                    <i class=" fa-solid fa-xmark fa-2xl" style="color: #ffffff;cursor: pointer;margin-top: 25px;"
+                        onclick="fecharMiniJanela()"></i>
                 </div>
             </div>
         </div>
     </div>
-
     <footer class="footer">
         <p>© 2023 Meu Portfólio de Desenvolvimento | Todos os direitos reservados</p>
     </footer>
