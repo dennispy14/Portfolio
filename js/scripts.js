@@ -117,11 +117,11 @@ function abrirMiniJanela(num) {
 
     switch (num) {
         case 1:
-            h2.textContent = 'Java';
+            h2.textContent = 'JAVA';
             p.textContent = 'Sou proficiente em Java, com experiência específica em desenvolvimento web baseado em Java EE. Minhas habilidades incluem a criação de aplicativos robustos, gerenciamento de dependências, configuração de segurança e implementação de serviços RESTful. Trabalhei em projetos de backend que abrangem desde a criação de APIs até a integração com bancos de dados, utilizando mapeamento objeto-relacional (ORM) com Hibernate e Java Persistence API (JPA).';
             break;
         case 2:
-            h2.textContent = 'JavaScript';
+            h2.textContent = 'JAVASCRIPT';
             p.textContent = 'Possuo sólidos conhecimentos em JavaScript e sou capaz de criar aplicativos web interativos e responsivos. Minha experiência inclui o uso de bibliotecas populares como React e Vue.js para criar interfaces de usuário dinâmicas. Além disso, estou familiarizado com os princípios de programação assíncrona e manipulação de eventos para criar experiências de usuário atraentes.';
             break;
         case 3:
@@ -131,6 +131,10 @@ function abrirMiniJanela(num) {
         case 4:
             h2.textContent = 'CSS';
             p.textContent = 'Tenho experiência em estilização de páginas web usando CSS. Isso inclui a criação de layouts responsivos, seletores CSS avançados e animações. Minha habilidade em CSS também se estende à criação de designs acessíveis e compatíveis com vários navegadores para garantir uma experiência consistente do usuário';
+            break;
+        case 5:
+            h2.textContent = 'SQL SERVER';
+            p.textContent = 'Tenho experiência no desenvolvimento e gerenciamento de bancos de dados usando o Microsoft SQL Server. Minha proficiência abrange desde a criação de bancos de dados e tabelas até a otimização de consultas complexas.';
             break;
         default:
             h2.textContent = '';
